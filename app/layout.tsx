@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 // Global CSS
 import "./styles/globals.css";
+import SideNavigation from "@/components/common/navigation/SideNavigation";
 
 const roboto = Roboto({ subsets: ["latin"], weight: ["400","500", "700"] });
 
@@ -17,7 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={roboto.className}>{children}</body>
+      <body className={roboto.className}>
+        <SideNavigation />
+        {children}</body>
     </html>
   );
 }
